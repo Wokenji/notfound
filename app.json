@@ -1,0 +1,22 @@
+
+{
+  "name": "@PremiumCrocodileBot",
+  "description": "Soz Oyunu",
+  "keywords": [
+    "telegram",
+    "best",
+    "group",
+    "manager",
+    "3"
+  ],
+  "repository": "https://github.com/mraliyev777/borzcro",
+  
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "10"
+      }
+    }
+  ]
+}
