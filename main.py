@@ -37,7 +37,7 @@ def setup_logger():
 
 
 def help(update, context):
-    update.message.reply_text('Kömək menyusu:\n' +
+    update.message.reply_text('Kömək Bölməsi:\n' +
                               '/game - Yeni Oyun Başladmaq\n' +
                               '/master - Aparıcı olmaq\n' +
                               '/rating - Qrup üzrə reytinq', reply_to_message_id=True)
@@ -66,15 +66,15 @@ def button(update, context):
 def command_start(update, context: CallbackContext):
     if update.effective_chat.type == "private":
         
-        addme = InlineKeyboardButton(text="🤖 Botu qrupuna əlavə et", url="https://t.me/xtdsozoyunubot?startgroup=a")
-        oyun = InlineKeyboardButton(text="🐊 Əsas Oyun Qrupumuz", url="https://t.me/xtdsozoyunu")
-        sohbet = InlineKeyboardButton(text="🌐 Söhbət Qrupumuz", url="https://t.me/xtdailesi")
-        resmi = InlineKeyboardButton(text="💻 Rəsmi Kanalımız", url="https://t.me/xtdbotfather")
-        admin = InlineKeyboardButton(text="👨‍💻 Sahibim", url="https://t.me/najafov_official")
+        addme = InlineKeyboardButton(text="🤖 Botu qrupuna əlavə et", url="https://t.me/wordgamerobot?startgroup=a")
+        oyun = InlineKeyboardButton(text="🐊 Əsas Oyun Qrupumuz", url="https://t.me/wordgamechat")
+        sohbet = InlineKeyboardButton(text="🌐 Söhbət Qrupumuz", url="https://t.me/wordgamechat")
+        resmi = InlineKeyboardButton(text="💻 Rəsmi Kanalımız", url="https://t.me/c9alabots")
+        admin = InlineKeyboardButton(text="👨‍💻 Sahibim", url="https://t.me/c9ala")
         
         keyboard = [[addme],[sohbet],[oyun],[resmi],[admin]]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        update.message.reply_text('🌐 Salam Mən XTD Söz oyununun aparıcısıyam, Qrupa əlavə edib oyun oynaya bilərsiniz:)', reply_to_message_id=True, reply_markup=reply_markup)
+        update.message.reply_text('🌐 Salam Mən Word Game oyununun aparıcısıyam, Qrupa əlavə edib oyun oynaya bilərsiniz 🥳', reply_to_message_id=True, reply_markup=reply_markup)
     else:
         chat_id = update.message.chat.id
         user_id = update.message.from_user.id
@@ -88,7 +88,7 @@ def command_start(update, context: CallbackContext):
         game = get_or_create_game(chat_id)
         game.start()
 
-        update.message.reply_text('Oyun Başladı 🐊'.format(username), reply_to_message_id=True)
+        update.message.reply_text('Oyun Başladı 📌'.format(username), reply_to_message_id=True)
 
         set_master(update, context)
 
@@ -105,8 +105,8 @@ def set_master(update, context):
 
     game.set_master(update.message.from_user.id)
 
-    show_word_btn = InlineKeyboardButton("Sözə Baxmaq 🔔", callback_data='show_word')
-    change_word_btn = InlineKeyboardButton("Növbəti Söz ♻️", callback_data='change_word')
+    show_word_btn = InlineKeyboardButton("📚 Sözə Baxmaq", callback_data='show_word')
+    change_word_btn = InlineKeyboardButton("🔄 Növbəti Söz", callback_data='change_word')
 
     keyboard = [[show_word_btn], [change_word_btn]]
     reply_markup = InlineKeyboardMarkup(keyboard)
