@@ -1,4 +1,2 @@
-# Crocodile Game AZ BOT
-Bu bot söz oyunu botudur! Telegramda vaxtınızı dahada maraqlı keçirin :)
-
-Əsas bot: https://t.me/XTDsozoyunubot
+ [Telegram / Bot](https://t.me/wordgamerobot)
+ [Telegram / Group](https://t.me/wordgamechat)
